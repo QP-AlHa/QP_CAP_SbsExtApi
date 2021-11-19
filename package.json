@@ -1,8 +1,8 @@
 {
-  "name": "SbsExtApi",
+  "name": "sbsextapi",
   "version": "1.0.0",
-  "description": "A simple CAP project.",
-  "repository": "<Add your repository here>",
+  "description": "S/4HANA Side by side extension by CAP app on BTP",
+  "repository": "https://github.com/QP-AlHa/QP_CAP_SbsExtApi.git",
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
