@@ -1,6 +1,6 @@
 {
   "meta": {
-    "creator": "cds-dk 4.6.2"
+    "creator": "cds-dk 4.7.1"
   },
   "$version": "2.0",
   "definitions": {
@@ -589,7 +589,7 @@
           "@sap.quickinfo": "Internal Mail Postal Code"
         },
         "to_EmailAddress": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_AddressEmailAddress",
           "cardinality": {
@@ -598,7 +598,7 @@
           "keys": []
         },
         "to_FaxNumber": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_AddressFaxNumber",
           "cardinality": {
@@ -607,7 +607,7 @@
           "keys": []
         },
         "to_MobilePhoneNumber": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_AddressPhoneNumber",
           "cardinality": {
@@ -616,7 +616,7 @@
           "keys": []
         },
         "to_PhoneNumber": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_AddressPhoneNumber",
           "cardinality": {
@@ -625,7 +625,7 @@
           "keys": []
         },
         "to_URLAddress": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_AddressHomePageURL",
           "cardinality": {
@@ -743,7 +743,9 @@
         },
         "ValidityEndDate": {
           "key": true,
-          "type": "cds.Timestamp",
+          "type": "cds.DateTime",
+          "@odata.type": "Edm.DateTimeOffset",
+          "@odata.precision": 0,
           "@sap.label": "Valid To",
           "@sap.quickinfo": "Validity End of a Business Partner Address Usage"
         },
@@ -762,7 +764,9 @@
           "@sap.label": "Address Number"
         },
         "ValidityStartDate": {
-          "type": "cds.Timestamp",
+          "type": "cds.DateTime",
+          "@odata.type": "Edm.DateTimeOffset",
+          "@odata.precision": 0,
           "@sap.label": "Valid From",
           "@sap.quickinfo": "Validity Start of a Business Partner Address Usage"
         },
@@ -1294,7 +1298,7 @@
           "@sap.quickinfo": "Company ID of Trading Partner"
         },
         "to_BuPaIdentification": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_BuPaIdentification",
           "cardinality": {
@@ -1303,7 +1307,7 @@
           "keys": []
         },
         "to_BuPaIndustry": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_BuPaIndustry",
           "cardinality": {
@@ -1312,7 +1316,7 @@
           "keys": []
         },
         "to_BusinessPartnerAddress": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_BusinessPartnerAddress",
           "cardinality": {
@@ -1321,7 +1325,7 @@
           "keys": []
         },
         "to_BusinessPartnerBank": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_BusinessPartnerBank",
           "cardinality": {
@@ -1330,7 +1334,7 @@
           "keys": []
         },
         "to_BusinessPartnerContact": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_BusinessPartnerContact",
           "cardinality": {
@@ -1339,7 +1343,7 @@
           "keys": []
         },
         "to_BusinessPartnerRole": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_BusinessPartnerRole",
           "cardinality": {
@@ -1348,7 +1352,7 @@
           "keys": []
         },
         "to_BusinessPartnerTax": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_BusinessPartnerTaxNumber",
           "cardinality": {
@@ -1357,13 +1361,13 @@
           "keys": []
         },
         "to_Customer": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_Customer",
           "keys": []
         },
         "to_Supplier": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_Supplier",
           "keys": []
@@ -1392,12 +1396,16 @@
           "@sap.label": "Address Number"
         },
         "ValidityStartDate": {
-          "type": "cds.Timestamp",
+          "type": "cds.DateTime",
+          "@odata.type": "Edm.DateTimeOffset",
+          "@odata.precision": 0,
           "@sap.label": "Valid From",
           "@sap.quickinfo": "Validity Start of a Business Partner Address"
         },
         "ValidityEndDate": {
-          "type": "cds.Timestamp",
+          "type": "cds.DateTime",
+          "@odata.type": "Edm.DateTimeOffset",
+          "@odata.precision": 0,
           "@sap.label": "Valid To",
           "@sap.quickinfo": "Validity End of a Business Partner Address"
         },
@@ -1652,7 +1660,7 @@
           "@sap.label": "Township"
         },
         "to_AddressUsage": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_BuPaAddressUsage",
           "cardinality": {
@@ -1661,7 +1669,7 @@
           "keys": []
         },
         "to_EmailAddress": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_AddressEmailAddress",
           "cardinality": {
@@ -1670,7 +1678,7 @@
           "keys": []
         },
         "to_FaxNumber": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_AddressFaxNumber",
           "cardinality": {
@@ -1679,7 +1687,7 @@
           "keys": []
         },
         "to_MobilePhoneNumber": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_AddressPhoneNumber",
           "cardinality": {
@@ -1688,7 +1696,7 @@
           "keys": []
         },
         "to_PhoneNumber": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_AddressPhoneNumber",
           "cardinality": {
@@ -1697,7 +1705,7 @@
           "keys": []
         },
         "to_URLAddress": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_AddressHomePageURL",
           "cardinality": {
@@ -1777,12 +1785,16 @@
           "@sap.quickinfo": "Name of Bank Account"
         },
         "ValidityStartDate": {
-          "type": "cds.Timestamp",
+          "type": "cds.DateTime",
+          "@odata.type": "Edm.DateTimeOffset",
+          "@odata.precision": 0,
           "@sap.label": "Valid From",
           "@sap.quickinfo": "Validity Start of Business Partner Bank Details"
         },
         "ValidityEndDate": {
-          "type": "cds.Timestamp",
+          "type": "cds.DateTime",
+          "@odata.type": "Edm.DateTimeOffset",
+          "@odata.precision": 0,
           "@sap.label": "Valid To",
           "@sap.quickinfo": "Validity End of Business Partner Bank Details"
         },
@@ -1891,7 +1903,7 @@
           "@sap.quickinfo": "Business Partner Relationship Category"
         },
         "to_ContactAddress": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_BPContactToAddress",
           "cardinality": {
@@ -1900,7 +1912,7 @@
           "keys": []
         },
         "to_ContactRelationship": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_BPContactToFuncAndDept",
           "keys": []
@@ -1929,12 +1941,16 @@
           "@sap.label": "BP Role"
         },
         "ValidFrom": {
-          "type": "cds.Timestamp",
+          "type": "cds.DateTime",
+          "@odata.type": "Edm.DateTimeOffset",
+          "@odata.precision": 0,
           "@sap.label": "Valid From",
           "@sap.quickinfo": "Validity Start of a BP Role"
         },
         "ValidTo": {
-          "type": "cds.Timestamp",
+          "type": "cds.DateTime",
+          "@odata.type": "Edm.DateTimeOffset",
+          "@odata.precision": 0,
           "@sap.label": "Valid To",
           "@sap.quickinfo": "Validity End of a BP Role"
         },
@@ -2253,7 +2269,7 @@
           "@sap.label": "County Code"
         },
         "to_CustomerCompany": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_CustomerCompany",
           "cardinality": {
@@ -2262,7 +2278,7 @@
           "keys": []
         },
         "to_CustomerSalesArea": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_CustomerSalesArea",
           "cardinality": {
@@ -2271,7 +2287,7 @@
           "keys": []
         },
         "to_CustomerTaxGrouping": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_CustomerTaxGrouping",
           "cardinality": {
@@ -2280,7 +2296,7 @@
           "keys": []
         },
         "to_CustomerText": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_CustomerText",
           "cardinality": {
@@ -2289,7 +2305,7 @@
           "keys": []
         },
         "to_CustomerUnloadingPoint": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_CustomerUnloadingPoint",
           "cardinality": {
@@ -2531,7 +2547,7 @@
           "@sap.quickinfo": "Customer Account Group"
         },
         "to_CompanyText": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_CustomerCompanyText",
           "cardinality": {
@@ -2540,7 +2556,7 @@
           "keys": []
         },
         "to_CustomerDunning": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_CustomerDunning",
           "cardinality": {
@@ -2549,7 +2565,7 @@
           "keys": []
         },
         "to_WithHoldingTax": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_CustomerWithHoldingTax",
           "cardinality": {
@@ -2975,7 +2991,7 @@
           "@sap.quickinfo": "Customer Account Group"
         },
         "to_PartnerFunction": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_CustSalesPartnerFunc",
           "cardinality": {
@@ -2984,7 +3000,7 @@
           "keys": []
         },
         "to_SalesAreaTax": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_CustomerSalesAreaTax",
           "cardinality": {
@@ -2993,7 +3009,7 @@
           "keys": []
         },
         "to_SalesAreaText": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_CustomerSalesAreaText",
           "cardinality": {
@@ -3870,7 +3886,7 @@
           "@sap.quickinfo": "Tax Split"
         },
         "to_SupplierCompany": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_SupplierCompany",
           "cardinality": {
@@ -3879,7 +3895,7 @@
           "keys": []
         },
         "to_SupplierPurchasingOrg": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_SupplierPurchasingOrg",
           "cardinality": {
@@ -3888,7 +3904,7 @@
           "keys": []
         },
         "to_SupplierText": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_SupplierText",
           "cardinality": {
@@ -4157,7 +4173,7 @@
           "@sap.quickinfo": "Vendor account group"
         },
         "to_CompanyText": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_SupplierCompanyText",
           "cardinality": {
@@ -4166,13 +4182,13 @@
           "keys": []
         },
         "to_Supplier": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_Supplier",
           "keys": []
         },
         "to_SupplierDunning": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_SupplierDunning",
           "cardinality": {
@@ -4181,7 +4197,7 @@
           "keys": []
         },
         "to_SupplierWithHoldingTax": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_SupplierWithHoldingTax",
           "cardinality": {
@@ -4586,7 +4602,7 @@
           "@sap.quickinfo": "Vendor account group"
         },
         "to_PartnerFunction": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_SupplierPartnerFunc",
           "cardinality": {
@@ -4595,7 +4611,7 @@
           "keys": []
         },
         "to_PurchasingOrgText": {
-          "doc": "Please add  an ON condition",
+          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "OP_API_BUSINESS_PARTNER_SRV.A_SupplierPurchasingOrgText",
           "cardinality": {
