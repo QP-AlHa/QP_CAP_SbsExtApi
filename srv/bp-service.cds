@@ -3,6 +3,7 @@ namespace service.bpProvider;
  
  
 service BPService  {
+  
 
   @readonly entity BusinessPartner as projection on BUPA_API.A_BusinessPartner {
      key BusinessPartner as businessPartnerId,
@@ -10,6 +11,12 @@ service BPService  {
       to_BusinessPartnerAddress as to_BusinessPartnerAddress
   };
 
+  @Capabilities: {
+    InsertRestrictions.Insertable: false,
+    UpdateRestrictions.Updatable: true,
+    DeleteRestrictions.Deletable: false,
+    ReadRestrictions.Readable: true
+  }
   entity BusinessPartnerAddress as projection on BUPA_API.A_BusinessPartnerAddress {
      key BusinessPartner as businessPartnerId,
      key AddressID as addressId,
