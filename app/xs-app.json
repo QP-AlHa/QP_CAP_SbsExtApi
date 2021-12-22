@@ -2,7 +2,7 @@
   "authenticationMethod": "route",
   "routes": [
     {
-      "source": "/bp/(.*)",
+      "source": "^/bp/(.*)$",
       "destination": "srv-api",
       "csrfProtection": true,
       "authenticationType": "xsuaa"
