@@ -11,6 +11,11 @@ annotate service.BusinessPartner with @UI.LineItem : [
 }
 ];
 
+annotate service.BusinessPartner with {
+    businessPartnerName @title: 'Name';
+    businessPartnerId @title: 'Number';
+}
+
 annotate service.BusinessPartner with @UI.HeaderInfo :
 {
     TypeName : 'Business Partner',
@@ -62,6 +67,19 @@ annotate service.BusinessPartnerAddress with @UI.LineItem : [
 }
 ];
 
+annotate service.BusinessPartnerAddress with {
+    businessPartnerId @title: 'BP Number';
+    addressId @title: 'Addr Number';
+    postalCode @title: 'ZIP';
+    cityName @title: 'City';
+    streetName @title: 'Street';
+    houseNumber @title: 'House Number';
+    country @title: 'Country';
+    corrLanguage @title: 'Language';
+    validFrom @title: 'Valid From';
+    validTo @title: 'Valid To';
+}
+
 annotate service.BusinessPartnerAddress with @UI.HeaderInfo :
 {
     TypeName : 'Business Partner Address',
@@ -75,4 +93,24 @@ annotate service.BusinessPartner with @UI.Facets : [{
     Label : 'Adresses',
     Target : 'to_BusinessPartnerAddress/@UI.LineItem'
 }];
+
+annotate service.BusinessPartnerAddress with @UI.FieldGroup : {
+    Data : [
+        { $Type: 'UI.DataField', Value: postalCode },
+        { $Type: 'UI.DataField', Value: cityName },
+        { $Type: 'UI.DataField', Value: streetName },
+        { $Type: 'UI.DataField', Value: houseNumber },
+        { $Type: 'UI.DataField', Value: country },
+        { $Type: 'UI.DataField', Value: corrLanguage },
+        { $Type: 'UI.DataField', Value: validFrom },
+        { $Type: 'UI.DataField', Value: validTo }
+    ]
+};
+
+annotate service.BusinessPartnerAddress with @UI.Facets : [{
+    $Type : 'UI.ReferenceFacet',
+    Label : 'Address Information',
+    Target : '@UI.FieldGroup'
+}];
+
 
