@@ -1,0 +1,69 @@
+_schema-version: '3.1'
+ID: SbsExtApi
+description: A simple CAP project.
+version: 1.0.0
+modules:
+  - name: SbsExtApi-srv
+    type: nodejs
+    path: gen/srv
+    requires:
+      - name: SbsExtApi-dest
+      - name: SbsExtApi-xsuaa
+    provides:
+      - name: srv-api
+        properties:
+          srv-url: '${default-url}'
+    parameters:
+      buildpack: nodejs_buildpack
+  - name: app
+    type: approuter.nodejs
+    path: app
+    requires:
+      - name: SbsExtApi_html_repo_runtime
+      - name: SbsExtApi-xsuaa
+      - name: srv-api
+        group: destinations
+        properties:
+          name: srv-api
+          url: '~{srv-url}'
+          forwardAuthToken: true
+    parameters:
+      disk-quota: 256M
+      memory: 256M
+  - name: SbsExtApi_ui_deployer
+    type: com.sap.application.content
+    path: .
+    requires:
+      - name: SbsExtApi_html_repo_host
+        parameters:
+          content-target: true
+resources:
+  - name: SbsExtApi-xsuaa
+    type: org.cloudfoundry.managed-service
+    parameters:
+      path: ./xs-security.json
+      service: xsuaa
+      service-plan: application
+  - name: SbsExtApi-dest
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: destination
+      service-plan: lite
+  - name: SbsExtApi_html_repo_runtime
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: html5-apps-repo
+      service-plan: app-runtime
+  - name: SbsExtApi_html_repo_host
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: html5-apps-repo
+      service-plan: app-host
+parameters:
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+    - builder: custom
+      commands:
+        - npm install --production
+        - npx -p @sap/cds-dk cds build --production

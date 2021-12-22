@@ -1,0 +1,18 @@
+{
+  "authenticationMethod": "route",
+  "routes": [
+    {
+      "source": "/bp/(.*)",
+      "destination": "srv-api",
+      "csrfProtection": true,
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^(.*)$",
+      "destination": "$1",
+      "authenticationType": "xsuaa"
+    }
+
+  ],
+  "welcomeFile": "/bpmaint"
+}

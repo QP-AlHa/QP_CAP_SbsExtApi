@@ -3,14 +3,14 @@ namespace service.bpProvider;
  
  
 service BPService  {
-  
-
+  @requires: 'authenticated-user'
   @readonly entity BusinessPartner as projection on BUPA_API.A_BusinessPartner {
      key BusinessPartner as businessPartnerId,
       BusinessPartnerFullName as businessPartnerName,
       to_BusinessPartnerAddress as to_BusinessPartnerAddress
   };
 
+  @requires: 'authenticated-user'
   @Capabilities: {
     InsertRestrictions.Insertable: false,
     UpdateRestrictions.Updatable: true,
