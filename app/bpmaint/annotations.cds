@@ -68,16 +68,16 @@ annotate service.BusinessPartnerAddress with @UI.LineItem : [
 ];
 
 annotate service.BusinessPartnerAddress with {
-    businessPartnerId @title: 'BP Number';
-    addressId @title: 'Addr Number';
+    businessPartnerId @title: 'BP Number' @readonly;
+    addressId @title: 'Addr Number' @readonly;
     postalCode @title: 'ZIP';
     cityName @title: 'City';
     streetName @title: 'Street';
     houseNumber @title: 'House Number';
     country @title: 'Country';
     corrLanguage @title: 'Language';
-    validFrom @title: 'Valid From';
-    validTo @title: 'Valid To';
+    validFrom @title: 'Valid From' @readonly;
+    validTo @title: 'Valid To' @readonly;
 }
 
 annotate service.BusinessPartnerAddress with @UI.HeaderInfo :
