@@ -53,6 +53,10 @@ modules:
       - bpmaint.zip
       name: bpmaint
       target-path: resources/
+    - artifacts:
+      - bpmaintv2.zip
+      name: bpmaintv2
+      target-path: resources/
 
 - name: bpmaint
   type: html5
@@ -64,21 +68,6 @@ modules:
     - npm install
     - npm run build:cf
     supported-platforms: []
-
-- name: SbsExtApi-ui-v2_deployer
-  type: com.sap.application.content
-  path: .
-  requires:
-  - name: SbsExtApi-html_repo_host
-    parameters:
-      content-target: true
-  build-parameters:
-    build-result: resources
-    requires:
-    - artifacts:
-      - bpmaintv2.zip
-      name: bpmaintv2
-      target-path: resources/
 
 - name: bpmaintv2
   type: html5
